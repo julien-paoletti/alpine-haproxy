@@ -27,12 +27,12 @@ docker build -t jpao/haproxy:latest .
 # Start container
 
 ```shell
-docker run -d --name reverse-proxy jpao/haproxy:latest
+docker run -d -p 80:80 -p 443:443 --name reverse-proxy jpao/haproxy:latest
 docker logs reverse-proxy
 ```
 
-# Start container with shell
+# Stop container
 
 ```shell
-docker run -it --name reverse-proxy jpao/haproxy:latest sh
+docker stop reverse-proxy
 ```
